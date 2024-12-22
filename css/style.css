@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 :root {
     --azul: #18d0f9;
     --verde: #25dc25;
@@ -10,6 +12,17 @@
     box-sizing: border-box;
     text-decoration: none;
     list-style: none;
+    font-family: "poppins", serif;
+}
+
+a {
+    background-image: linear-gradient(45deg, var(--azul), var(--verde));
+    color: transparent;
+    background-clip: text;
+} 
+
+button {
+    cursor: pointer;
 }
 
 main {
@@ -26,15 +39,38 @@ header {
     padding-left: 10%;
     background-image: linear-gradient(45deg, var(--azul), var(--verde));
     color: var(--claro);
+    z-index: 1;
 }
 
 #notes-wall {
     text-align: center;
-    min-height: 100vh;
+    min-height: 95vh;
     display: flex;
     justify-content: center;
     align-items: center;
 }
+
+.notes-wall-alt {
+    justify-content: start !important;
+    align-items: start !important;
+    padding-top: 15vh;
+    width: 90%;
+    margin-left: 6%;
+}
+
+#notas {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 50px;
+}
+
+#notas li {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
 #msg-vazio {
     color: #737e7c;
 }
@@ -49,10 +85,6 @@ header {
 
 #formulario {
     display: none;
-}
-
-.card-nota {
-    padding: 20px;
 }
 
 input {
@@ -72,6 +104,10 @@ input, textarea {
     border-radius: 20px;
 }
 
+input:focus, textarea:focus {
+    outline: none;
+}
+
 #formulario button {
     width: 100%;
     height: 50px;
@@ -84,23 +120,68 @@ input, textarea {
 
 #btn-nova-nota {
     position: fixed;
-    bottom: 50px;
-    right: 50px;
+    bottom: 25px;
+    right: 25px;
     height: 60px; width: 60px;
     background-image: linear-gradient(45deg, var(--azul), var(--verde));
     border: none;
     border-radius: 50%;
-    font-size: 2rem;
+    font-size: 1.5rem;
     color: #EDF7F6;
 }
 
+.card-nota {
+    position: relative;
+    padding: 20px;
+    min-height: 200px; width: 200px;
+    word-wrap: break-word;
+}
+
+.btn-apagar {
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    padding: 2px;
+    background-color: transparent;
+    border: none;
+}
+.btn-apagar svg {
+    stroke: rgb(214, 53, 21);
+}
 
 footer {
     width: 100%;
-    position: fixed;
     bottom: 0;
     text-align: center;
 }
 
+
+@media only screen and (max-width: 481px) {
+    #notas {
+        flex-wrap: nowrap;
+    }
+    .card-nota {
+        width: 180px;
+        word-break: break-all;
+    }
+    .notes-wall-alt {
+        justify-content: center !important;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    .card-nota {
+        width: 100%;
+    }
+    #notas {
+        justify-content: center;
+        flex-direction: column;
+        width: 100%;
+    }
+    #msg-vazio {
+        position: absolute;
+    }
+
+}
 
 
