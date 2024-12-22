@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Notes app</title>
+</head>
+<body>
+    <main id="app">
+        <header>
+            <h1>NOTAS</h1>
+        </header>
+
+        <section id="notes-wall">
+            <p id="msg-vazio">Mural vazio... <br>Insira alguma nota</p>
+            <form action="" id="formulario">
+                <!-- <label for="titulo">Titulo</label><br> -->
+                <input type="text" name="titulo" id="titulo" placeholder="Titulo"><br>
+                <!-- <label for="corpo">Conteúdo</label><br> -->
+                <textarea type="text" name="corpo" id="corpo" placeholder="Nota"></textarea><br>
+                <button id="btn-adicionar" type="submit">Adicionar</button>
+            </form>
+            <ul id="notas">
+
+            </ul>
+        </section>
+
+        <button id="btn-nova-nota" type="button">+</button>
+
+        <footer>
+            <p>Desenvolvido por Thiago Silva</p>
+        </footer>
+    </main>
+
+    <script type="module" src="./js/main.js"></script>
+</body>
+</html>

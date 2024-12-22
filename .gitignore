@@ -1,0 +1,25 @@
+# Node.js
+node_modules/
+npm-debug.log
+.env
+
+# Build e Distribuição
+dist/
+build/
+out/
+
+# Configurações do Sistema Operacional e IDE
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Arquivos Temporários
+*.log
+*.tmp
+tmp/
+
+# Dependências de Compilação
+package-lock.json
+yarn.lock
+coverage/
